@@ -3,6 +3,7 @@ Nette Sample Tags
 
 Sample application in Nette and MaterializeCSS
 
+## Instalace MySQL
 
 $ podman run -d \
   --name sportisimo-mysql \

@@ -15,6 +15,22 @@ session:
 services:
 	router: App\RouterFactory::createRouter
 
+	# factories
+	- App\UI\TagGridFactory
+	- App\UI\TagCreateFactory
+	- App\UI\TagEditFactory
+	- App\UI\TagRemoveFactory
+
+	# models
+	- App\UI\TagGridModel
+
+	# commands&queries
+	- App\Business\TagQuery
+	- App\Business\TagOneQuery
+	- App\Business\TagCreateCommand
+	- App\Business\TagEditCommand
+	- App\Business\TagRemoveCommand
+
 
 database:
 	dsn: %databaseDSN%
