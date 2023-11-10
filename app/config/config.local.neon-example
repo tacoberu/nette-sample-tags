@@ -1,0 +1,2 @@
+parameters:
+	databaseDSN: "sqlite:%appDir%/../var/data.sqlite3"

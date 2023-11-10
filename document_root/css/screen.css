@@ -1,0 +1,515 @@
+body {
+	font-size: 15px;
+	line-height: 1.6;
+	color: #333;
+	background: white;
+}
+
+h1 {
+	color: #3484D2;
+}
+
+#ajax-spinner {
+	margin: 15px 0 0 15px;
+	padding: 13px;
+	background: white url('../images/spinner.gif') no-repeat 50% 50%;
+	font-size: 0;
+	z-index: 123456;
+	display: none;
+}
+
+
+a[href^="error:"] {
+	background: red;
+	color: white;
+}
+
+form > table {
+	width: 100%
+}
+
+form th, form td {
+	vertical-align: top;
+	font-weight: normal;
+}
+
+form th {
+	text-align: right;
+	/* width: 25%; */
+}
+
+form .required label {
+	font-weight: bold;
+}
+
+form .error {
+	color: #D00;
+	font-weight: bold;
+}
+
+form td > textarea {
+	width: 100%;
+	resize: vertical;
+}
+
+html.js .jshidden {
+	display: none;
+}
+
+.sidebar{
+	float: left;
+	width: 200px;
+}
+
+.article{
+	padding: 20px;
+	margin-left: 200px;
+}
+
+
+
+/* grid */
+.grid table {
+	border: 1px solid lightgray;
+	border-collapse: collapse;
+}
+
+.grid table thead {
+	background-color: lightgray;
+	color: black;
+	border: 1px solid lightgray;
+}
+.grid table tbody td,
+.grid table thead th {
+	border: 1px solid #bbb;
+	padding: .1rem .5rem;
+}
+.grid table thead th {
+	text-align: left;
+}
+.grid table div.grid-paginator {
+	min-width: 30rem;
+}
+.grid table div.grid-paginator span,
+.grid table div.grid-paginator a {
+	display: inline-block;
+	padding: .2rem .5rem;
+	background-color: #f1efee;
+	color: #333;
+	font-family: sans;
+	font-size: .833rem;
+	border-radius: 5px;
+}
+.grid table div.grid-paginator span {
+	border: 1px solid #cdc7c2;
+	color: #aaa;
+}
+.grid table div.grid-paginator a {
+	border: 1px solid #cdc7c2;
+	text-decoration: none;
+}
+.grid table div.grid-paginator strong {
+	color: #333;
+	font-weight: normal;
+}
+.grid table div.grid-paginator strong em {
+	font-style: normal;
+}
+
+
+/* console */
+div.console {
+	border: 1px solid lightgray;
+	font-family: Consolas, monospace
+	font-size: small;
+	padding: 1em;
+}
+
+div.console li::marker {
+	color: blue;
+	font-size: .8em;
+}
+
+div.console ol {
+	padding: 0;
+	margin: 0 1em;
+}
+
+div.console li {
+	padding: 0 .5em;
+	margin: 0;
+}
+
+div.console dl.object {
+	display: flex;
+	flex-wrap: wrap;
+	padding: 0 .5em;
+	margin: 0;
+	position: relative;
+}
+div.console dl.object::before {
+	content: "{";
+	position: absolute;
+	left: -6px;
+	color: gray;
+}
+div.console dl.object::after {
+	content: "}";
+	position: absolute;
+	right: 15px;
+	bottom: 1px;
+	color: gray;
+}
+
+dl.object > dt {
+	flex: 0 0 auto;
+	width: 25%;
+	font-style: italic;
+	font-size: small;
+}
+
+dl.object > dd {
+	width: 75%;
+	flex: 0 0 auto;
+	margin: 0;
+}
+
+.type-numeric {
+	color: green;
+}
+.type-text::before,
+.type-text::after {
+	content: "\"";
+}
+
+
+/* DataSchema */
+.typetree {
+	margin: 0;
+	padding: 0;
+	font-family: Tahoma, sans-serif;
+	background-color: #f1f1f1;
+	border: 1px solid lightgray;
+}
+
+.typetree span.typename {
+    color: darkolivegreen;
+}
+
+.typetree .type {
+	margin: 0;
+	padding: 0;
+}
+
+<<<<<<< HEAD
+.typetree .type h3 {
+	margin: 0;
+	padding: 0 8px;
+	font-size: 1em;
+}
+
+.type.type-struct {
+	padding: 0 0 0 4px;
+}
+
+.typetree .type-struct.hidden > dl {
+    display: none;
+}
+
+.typetree .type-struct > h3:after {
+	content: "▼";
+	float: right;
+}
+
+.typetree .type-struct.hidden > h3:after {
+	content: "►";
+	float: right;
+}
+
+.typetree .type dl {
+	margin: 0;
+	margin-left: 1.2em;
+	padding: 0;
+	list-style-type: none;
+	border-left: 1px solid lightgray;
+}
+
+.typetree .type dl dt {
+	display: block;
+	float: left;
+	padding: 0 .5em 0 1em;
+}
+
+.typetree .type dd {
+	margin-inline-start: 0;
+}
+
+.typetree .type.type-collection > h3 {
+	float: left;
+	padding-left: 0;
+}
+
+.typetree .type.type-tags,
+.typetree .type.type-primarykey {
+	font-size: 0.7em;
+/*	vertical-align: super; */
+	position: relative;
+	top: -5px;
+	font-weight: normal;
+}
+
+
+#content-system div.type h3 {
+	margin: 0;
+	padding: 0;
+	border-bottom: 0 none;
+}
+
+
+
+/* Layout */
+body {
+	display: flex; display: -webkit-flex; display: -moz-box; display: -ms-flexbox;
+}
+#container {
+/*	border: 1px solid red; */
+/*	width: 960px;
+	margin: 0 auto;*/
+}
+
+
+/* navigation */
+.navigation {
+/*	border: 1px solid red; */
+	min-width: 15em;
+	margin: 0;
+	padding: 1em;
+}
+
+
+.flashainer {
+	position: fixed;
+	right: 0;
+	max-width: 30em;
+}
+
+
+/* flashmessage */
+div.flash {
+	color: black;
+	background: #FFF9D7;
+	border: 1px solid #E2C822;
+	padding: 1em;
+	margin: 1em 0;
+}
+div.flash.info {
+	margin: 0;
+	font-style: italic;
+	color: gray;
+}
+
+
+
+/* grid */
+.grid table {
+	border: 1px solid lightgray;
+	border-collapse: collapse;
+}
+
+.grid table thead {
+	background-color: lightgray;
+	color: black;
+	border: 1px solid lightgray;
+}
+.grid table tbody td,
+.grid table thead th {
+	border: 1px solid #bbb;
+	padding: .1rem .5rem;
+}
+.grid table thead th {
+	text-align: left;
+}
+.grid table div.grid-paginator {
+	min-width: 30rem;
+}
+.grid table div.grid-paginator span,
+.grid table div.grid-paginator a {
+	display: inline-block;
+	padding: .2rem .5rem;
+	background-color: #f1efee;
+	color: #333;
+	font-family: sans;
+	font-size: .833rem;
+	border-radius: 5px;
+}
+.grid table div.grid-paginator span {
+	border: 1px solid #cdc7c2;
+	color: #aaa;
+}
+.grid table div.grid-paginator a {
+	border: 1px solid #cdc7c2;
+	text-decoration: none;
+}
+.grid table div.grid-paginator strong {
+	color: #333;
+	font-weight: normal;
+}
+.grid table div.grid-paginator strong em {
+	font-style: normal;
+}
+
+.grid table div.grid-global-actions {
+	float: left;
+}
+
+.grid table th.grid-col-actions a {
+	white-space: nowrap;
+}
+
+
+/* console */
+div.console {
+	border: 1px solid lightgray;
+	font-family: Consolas, monospace
+	font-size: small;
+	padding: 1em;
+}
+
+div.console li::marker {
+	color: blue;
+	font-size: .8em;
+}
+
+div.console ol {
+	padding: 0;
+	margin: 0 1em;
+}
+
+div.console li {
+	padding: 0 .5em;
+	margin: 0;
+}
+
+div.console dl.object {
+	display: flex;
+	flex-wrap: wrap;
+	padding: 0 .5em;
+	margin: 0;
+	position: relative;
+}
+div.console dl.object::before {
+	content: "{";
+	position: absolute;
+	left: -6px;
+	color: gray;
+}
+div.console dl.object::after {
+	content: "}";
+	position: absolute;
+	right: 15px;
+	bottom: 1px;
+	color: gray;
+}
+
+dl.object > dt {
+	flex: 0 0 auto;
+	width: 25%;
+	font-style: italic;
+	font-size: small;
+}
+
+dl.object > dd {
+	width: 75%;
+	flex: 0 0 auto;
+	margin: 0;
+}
+
+.type-numeric {
+	color: green;
+}
+.type-text::before,
+.type-text::after {
+	content: "\"";
+}
+
+
+/* DataSchema */
+.typetree {
+	margin: 0;
+	padding: 0;
+	font-family: Tahoma, sans-serif;
+	background-color: #f1f1f1;
+	border: 1px solid lightgray;
+}
+
+.typetree span.typename {
+    color: darkolivegreen;
+}
+
+.typetree .type {
+	margin: 0;
+	padding: 0;
+}
+
+.typetree .type h3 {
+	margin: 0;
+	padding: 0 8px;
+	font-size: 1em;
+}
+
+.type.type-struct {
+	padding: 0 0 0 4px;
+}
+
+.typetree .type-struct.hidden > dl {
+    display: none;
+}
+
+.typetree .type-struct > h3:after {
+	content: "▼";
+	float: right;
+}
+
+.typetree .type-struct.hidden > h3:after {
+	content: "►";
+	float: right;
+}
+
+.typetree .type dl {
+	margin: 0;
+	margin-left: 1.2em;
+	padding: 0;
+	list-style-type: none;
+	border-left: 1px solid lightgray;
+}
+
+.typetree .type dl dt {
+	display: block;
+	float: left;
+	padding: 0 .5em 0 1em;
+}
+
+.typetree .type dd {
+	margin-inline-start: 0;
+}
+
+.typetree .type.type-collection > h3 {
+	float: left;
+	padding-left: 0;
+}
+
+.typetree .type.type-tags,
+.typetree .type.type-primarykey {
+	font-size: 0.7em;
+/*	vertical-align: super; */
+	position: relative;
+	top: -5px;
+	font-weight: normal;
+}
+
+
+#content-system div.type h3 {
+	margin: 0;
+	padding: 0;
+	border-bottom: 0 none;
+}
