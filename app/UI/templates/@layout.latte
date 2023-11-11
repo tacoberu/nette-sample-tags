@@ -4,10 +4,11 @@
 	<meta charset="utf-8">
 	<meta name="description" content="">
 	<meta name="robots" content="{$robots}" n:ifset="$robots">
-	<meta name="viewport" content="width=device-width">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 
 	<title>{ifset title}{include title|stripHtml} | {/ifset} Web</title>
 
+    <link rel="stylesheet" href="{$basePath}/css/materialize.css">
 	<link rel="stylesheet" media="screen,projection,tv" href="{$basePath}/css/screen.css">
 	<link rel="stylesheet" media="print" href="{$basePath}/css/print.css">
 	<link rel="shortcut icon" href="{$basePath}/favicon.ico">
@@ -15,18 +16,42 @@
 </head>
 
 <body>
-	<div class="flashainer" n:ifcontent>
-		<div n:foreach="$flashes as $flash" n:class="flash, $flash->type">{$flash->message}</div>
-	</div>
+	<header>
+		<nav class="top-nav">
+			<div class="nav-wrapper">
+				<a n:href="Dashboard:" class="brand-logo">SRP</a>
+				<ul id="nav-mobile" class="right hide-on-med-and-down">
+					<li><a>Odhlásit (admin)</a></li>
+				</ul>
+			</div>
+		</nav>
 
 
-	<div id="container">
+		<ul class="sidenav sidenav-fixed">
+			<li class="hamburger"><label><input type="checkbox" /><i class="material-icons">menu</i></label></li>
+			<li><a n:href="Dashboard:"><i class="material-icons">dashboard</i></a></li>
+			<li><a href="#!"><i class="material-icons">people</i></a></li>
+			<li><a href="#!"><i class="material-icons">new_releases</i></a></li>
+		</ul>
+	</header>
+
+
+	<main>
+
+		<div class="flashainer" n:ifcontent>
+			<div n:foreach="$flashes as $flash" n:class="flash, $flash->type">{$flash->message}</div>
+		</div>
+
 		{include content}
-	</div>
+	</main>
 
 
 	{block scripts}
-	<script src="https://nette.github.io/resources/js/netteForms.min.js"></script>
+	<script src="{$basePath}/js/jquery.js"></script>
+	<script src="{$basePath}/js/netteForms.js"></script>
+	<script src="{$basePath}/js/nette.ajax.js"></script>
+    <script src="{$basePath}/js/materialize.min.js"></script>
+	<script src="{$basePath}/js/main.js"></script>
 	{/block}
 </body>
 </html>
