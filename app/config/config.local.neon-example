@@ -1,2 +1,4 @@
 parameters:
-	databaseDSN: "sqlite:%appDir%/../var/data.sqlite3"
+	databaseDSN: 'mysql:host=10.88.0.5;dbname=db'
+	databaseUser: user
+	databasePassword: pswlo
