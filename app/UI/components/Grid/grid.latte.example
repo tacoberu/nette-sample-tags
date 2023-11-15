@@ -1,0 +1,68 @@
+<table class="x-grid">
+	<thead>
+		<tr>
+			<th>Název
+				<a n:if="$order != a-name" n:href="this, order => a-name" title="Řadit vzestupně"><i class="material-icons">arrow_upward</i></a>
+				<a n:if="$order != v-name" n:href="this, order => v-name" title="Řadit sestupně"><i class="material-icons">arrow_downward</i></a>
+				<a n:if="$order != Null" n:href="this, order => Null" title="Odstranit řazení"><i class="material-icons">clear</i></a>
+				</th>
+			<th class="x-actions">Akce</th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr n:foreach="$items as $row">
+			<td>{$row->name}</td>
+			<td class="x-actions">
+				<a href="{plink :remove, $row->id}">Smazat</a>,
+				<a href="{plink :edit, $row->id}">Editovat</a>
+			</td>
+		</tr>
+	</tbody>
+	<tfoot>
+		<tr>
+			<td colspan="2">
+				{include #pagination}
+			</td>
+		</tr>
+		<tr>
+			<td colspan="2">
+				{include #paginationItemsPerPage}
+			</td>
+		</tr>
+	</tfoot>
+
+</table>
+
+
+{define pagination}
+	<ul class="pagination right">
+		{if ! $paginator->isFirst()}
+			<li><a n:href="this, 'page' => $paginator->getPage() - 1"><i class="material-icons">chevron_left</i></a></li>
+			{if first($paginationSteps) != 1}
+			<li><a n:href="this, 'page' => 1">1</a></li>
+			<li>…</li>
+			{/}
+		{/}
+
+		{foreach $paginationSteps as $x}
+		<li n:class="$paginator->getPage() == $x ? active"><a n:href="this, 'page' => $x">{$x}</a></li>
+		{/}
+
+		{if ! $paginator->isLast()}
+			{if last($paginationSteps) != $paginator->pageCount}
+			<li>…</li>
+			<li><a n:href="this, 'page' => $paginator->pageCount">{$paginator->pageCount}</a></li>
+			{/}
+			<li><a n:href="this, 'page' => $paginator->getPage() + 1"><i class="material-icons">chevron_right</i></a></li>
+		{/}
+	</ul>
+{/define}
+
+
+{define paginationItemsPerPage}
+	<ul class="pagination right">
+		{foreach $paginationItemsPerPage as $x}
+		<li n:class="$paginator->getItemsPerPage() == $x ? active"><a n:href="this, ipp => $x">{$x}</a></li>
+		{/}
+	</ul>
+{/define}
