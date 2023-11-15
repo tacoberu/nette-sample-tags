@@ -18,3 +18,5 @@ services:
 
 database:
 	dsn: %databaseDSN%
+	user: %databaseUser%
+	password: %databasePassword%
