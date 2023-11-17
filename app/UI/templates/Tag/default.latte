@@ -14,8 +14,7 @@
 
 	<p>Výpis seznamu značek</p>
 
-	{*<a n:href="create" class="btn">Přidat značku <i class="material-icons left">add</i></a>*}
-	<button data-target="x-modal-create" class="btn modal-trigger">Přidat značku <i class="material-icons left">add</i></button>
+	<a n:href="create" class="btn ajax" data-naja-history="off" data-target="remote-modal">Přidat značku <i class="material-icons left">add</i></a>
 
 	{control grid}
 
@@ -24,9 +23,8 @@
 
 
 
-	<div id="x-modal-create" class="modal">
-		<div class="modal-content">
-			<h4>Vytvoření nové značky</h4>
-			{control create}
+	<div class="modal" id="remote-modal">
+		<div class="modal-content" id="snippet--modal">
+			Loading...
 		</div>
 	</div>
