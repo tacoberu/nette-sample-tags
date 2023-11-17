@@ -48,6 +48,7 @@ class TagPresenter extends UI\Presenter
 
 	function renderEdit(int $id)
 	{
+		$this->redrawControl('modal');
 	}
 
 
