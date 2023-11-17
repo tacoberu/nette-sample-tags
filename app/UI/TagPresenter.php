@@ -41,6 +41,7 @@ class TagPresenter extends UI\Presenter
 
 	function renderRemove(int $id)
 	{
+		$this->redrawControl('modal');
 	}
 
 
